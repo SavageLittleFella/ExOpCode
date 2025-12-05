@@ -4,7 +4,17 @@ public class Calculator {
     public static double add(double a, double b) {
         return a + b;
     }
-  
+
+    public static int power(int base, int exponent) {
+        if (exponent < 0) {
+            throw new IllegalArgumentException("Negative exponent is not supported");
+        }
+        if (exponent == 0) {
+            return 1;
+        }
+        return base * power(base, exponent - 1);
+    }
+    
     public static void main(String[] args) {
         final int EXIT = 0;
         final int ADD = 1;
