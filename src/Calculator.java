@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Calculator {
-    public static int add(int a, int b) {
+    public static double add(double a, double b) {
         return a + b;
     }
   
@@ -22,8 +22,8 @@ public class Calculator {
             switch (choice) {
                 case ADD:
                     System.out.print("Enter two numbers: ");
-                    int a = scanner.nextInt();
-                    int b = scanner.nextInt();
+                    double a = scanner.nextDouble(); // use nextDouble
+                    double b = scanner.nextDouble(); // use nextDouble
                     System.out.println("Result = " + add(a, b));
                     break;
                 case EXIT:
@@ -33,5 +33,7 @@ public class Calculator {
                     System.out.println("Invalid choice, try again.");
             }
         } while (choice != EXIT);
+
+        scanner.close();
     }
 }
